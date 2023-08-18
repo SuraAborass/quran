@@ -11,14 +11,10 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: UIColors.white,
-
-        body: Center(
-          child: Image.asset(
-            'assets/images/graduation-hat.png',
-            height: 290,
-            width: 345,
-          ),
+        //backgroundColor: UIColors.white,
+        body: Image.asset(
+          'assets/images/تردد-قنوات-القرآن-الكريم.png',
+          fit: BoxFit.cover,
         )
     );
   }
