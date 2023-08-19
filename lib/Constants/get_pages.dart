@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import '../PresentationLayer/Screens/Public/home_screen.dart';
 import '../PresentationLayer/Screens/Public/splash_screen.dart';
+import '../PresentationLayer/Screens/Public/surahs_screen.dart';
 import 'get_routes.dart';
 
 List<GetPage<dynamic>> getPages = [
@@ -9,7 +10,10 @@ List<GetPage<dynamic>> getPages = [
       page: () => SplashScreen(),
       transition: Transition.leftToRightWithFade),
   GetPage(
-      name: AppRoutes.splashScreen,
+      name: AppRoutes.homeScreen,
       page: () => const HomeScreen(),
       transition: Transition.leftToRightWithFade),
+  GetPage(
+      name: AppRoutes.allSurahs,
+      page: () =>  SurahsScreen(),),
 ];

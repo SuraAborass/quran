@@ -18,8 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      //locale: Get.deviceLocale,
-      title: 'School',
+      title: 'Quran',
       initialBinding: InitBinding(),
       getPages: getPages,
       //home:  LoginScreen(),
