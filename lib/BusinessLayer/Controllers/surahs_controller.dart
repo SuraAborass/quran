@@ -1,11 +1,13 @@
 import 'package:get/get.dart';
 
+import '../../DataAccessLayer/Models/data_in_surah.dart';
 import '../../DataAccessLayer/Models/surah.dart';
 import '../../DataAccessLayer/Repositories/surahs_repo.dart';
 
 class SurahsController extends GetxController{
   SurahsRepo repo = SurahsRepo();
   List<Surah> surahs = [];
+  List<DataInSurah> data = [];
   var loading = false.obs;
 
   @override

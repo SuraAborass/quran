@@ -16,44 +16,66 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: UIColors.primary,
         appBar: mainAppBar(context),
         body: Center(
-          child: Column(
-            children: [
-              const SizedBox(height: 50,),
-              InkWell(
-                onTap: (){
-                  Get.toNamed(AppRoutes.allSurahs);
-                },
-                child: Stack(
-                  children:  [
-                    const Image(image: AssetImage('assets/images/luxury-gold-removebg-preview.png',),
-                    width: 320,height: 190,),
-                    Positioned.fill(
-                        child: Align(alignment: Alignment.center,
-                            child: Text("السور",style: UITextStyle.titleBold.copyWith(fontSize: 22),)))
-                  ],
+          child: SizedBox(
+            height: 600,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                //const SizedBox(height: 50,),
+                Expanded(
+                  child: InkWell(
+                    onTap: (){
+                      Get.toNamed(AppRoutes.allSurahs);
+                    },
+                    child: Stack(
+                      children:  [
+                        const Image(image: AssetImage('assets/images/luxury-gold-removebg-preview.png',),
+                        width: 320,height: 190,),
+                        Positioned.fill(
+                            child: Align(alignment: Alignment.center,
+                                child: Text("السور",style: UITextStyle.titleBold.copyWith(fontSize: 22),)))
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-              //const SizedBox(height: 15,),
-              Stack(
-                children:  [
-                  const Image(image: AssetImage('assets/images/luxury-gold-removebg-preview.png',),
-                    width: 320,height: 190,),
-                  Positioned.fill(
-                      child: Align(alignment: Alignment.center,
-                          child: Text("الأجزاء",style: UITextStyle.titleBold.copyWith(fontSize: 22),)))
-                ],
-              ),
-              Stack(
-                children:  [
-                  const Image(image: AssetImage('assets/images/luxury-gold-removebg-preview.png',),
-                    width: 320,height: 190,),
-                  Positioned.fill(
-                      child: Align(alignment: Alignment.center,
-                          child: Text("التصنيفات",style: UITextStyle.titleBold.copyWith(fontSize: 22),)))
-                ],
-              ),
+                //const SizedBox(height: 15,),
+                Expanded(
+                  child: Stack(
+                    children:  [
+                      const Image(image: AssetImage('assets/images/luxury-gold-removebg-preview.png',),
+                        width: 320,height: 190,),
+                      Positioned.fill(
+                          child: Align(alignment: Alignment.center,
+                              child: Text("الأجزاء",style: UITextStyle.titleBold.copyWith(fontSize: 22),)))
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Stack(
+                    children:  [
+                      const Image(image: AssetImage('assets/images/luxury-gold-removebg-preview.png',),
+                        width: 320,height: 190,),
+                      Positioned.fill(
+                          child: Align(alignment: Alignment.center,
+                              child: Text("التصنيفات",style: UITextStyle.titleBold.copyWith(fontSize: 22),)))
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Stack(
+                    children:  [
+                      const Image(image: AssetImage('assets/images/luxury-gold-removebg-preview.png',),
+                        width: 320,height: 190,),
+                      Positioned.fill(
+                          child: Align(alignment: Alignment.center,
+                              child: Text("قصص مختارة",style: UITextStyle.titleBold.copyWith(fontSize: 20),)))
+                    ],
+                  ),
+                ),
 
-            ],
+              ],
+            ),
           ),
         ),
 
