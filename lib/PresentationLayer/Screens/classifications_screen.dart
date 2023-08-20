@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quran/Constants/get_routes.dart';
-import 'package:quran/PresentationLayer/Widgets/appar.dart';
+import '../../BusinessLayer/Controllers/classification_controller.dart';
+import '../Widgets/appar.dart';
+import '../Widgets/classification_item.dart';
 
-import '../../../BusinessLayer/Controllers/surahs_controller.dart';
-import '../../Widgets/surahs_item.dart';
 
-class SurahsScreen extends StatelessWidget {
-  SurahsScreen({Key? key}) : super(key: key);
-  final SurahsController surahsController = Get.put(SurahsController());
+class ClassificationsScreen extends StatelessWidget {
+   ClassificationsScreen({Key? key}) : super(key: key);
+final ClassificationController classificationController = Get.put(ClassificationController());
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -20,20 +19,15 @@ class SurahsScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: GetBuilder(
-                  init: surahsController,
+                  init: classificationController,
                   builder: (context) {
                     return SizedBox(
                       height: Get.height-100 ,
                       child: ListView.builder(
-                        itemCount: surahsController.surahs.length,
+                        itemCount: classificationController.classifications.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return InkWell(
-                            onTap: (){
-                              Get.toNamed(AppRoutes.surah,arguments: [surahsController.surahs[index]]);
-                            },
-                            child: SurahsItem(
-                              surah: surahsController.surahs[index],
-                            ),
+                          return ClassificationItem(
+                            classification: classificationController.classifications[index],
                           );
                         },
                       ),

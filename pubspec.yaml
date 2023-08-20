@@ -39,6 +39,7 @@ dependencies:
   get_storage: ^2.1.1
   flutter_launcher_icons: ^0.13.1
   http: ^0.13.6
+  shared_preferences: ^2.2.0
 
 flutter_icons:
   flutter_launcher_icons:

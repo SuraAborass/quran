@@ -1,19 +1,29 @@
 
-import 'data_in_surah.dart';
-
 class Surah {
-  final List<DataInSurah> surahs;
+  //final int id;
+  final int number;
+  final String name;
+  final String englishName;
+  final int numberOfAyahs;
+  final String revelationType;
 
-  Surah({required this.surahs});
+  Surah({
+    //required this.id,
+    required this.number,
+    required this.name,
+    required this.englishName,
+    required this.numberOfAyahs,
+    required this.revelationType,
+  });
 
   factory Surah.fromMap(Map<String, dynamic> map) {
     return Surah(
-      surahs:   List<DataInSurah>.from(
-        (map['data'] as List<dynamic>).map<DataInSurah>(
-              (l) => DataInSurah.fromMap(l as Map<String, dynamic>),
-        ),
-      ),
+      //id: map['id'] as int,
+      number: map['number'] as int,
+      name: map['name'],
+      englishName: map['englishName'] ,
+      numberOfAyahs:  map['numberOfAyahs'],
+      revelationType: map['revelationType'],
     );
   }
-
 }

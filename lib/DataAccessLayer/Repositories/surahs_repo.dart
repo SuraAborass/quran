@@ -6,11 +6,14 @@ import '../Models/surah.dart';
 class SurahsRepo {
   SurahsClient client = SurahsClient();
   Future<List<Surah>> getAllSurahs() async {
+    List<Surah> surahs= [];
     var response = await client.getAllSurahs();
+    print(jsonDecode(response)['data'] );
     if (response != "") {
-      final data = json.decode(response.body) as List<Map<String, dynamic>>;
-      return data.map<Surah>((json) => Surah.fromMap(json))
-          .toList();
+      for(var element in jsonDecode(response)['data']){
+        surahs.add(Surah.fromMap(element));
+      }
+      return surahs;
     }
     return [];
   }

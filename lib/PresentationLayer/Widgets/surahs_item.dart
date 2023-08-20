@@ -13,40 +13,23 @@ class SurahsItem extends StatelessWidget {
     return Container(
         margin: const EdgeInsets.symmetric(vertical: 2),
         width: Get.width,
-        height: Get.height,
-        child: SizedBox(
-          height: Get.height-100,
-          child: ListView.builder(
-              padding: const EdgeInsets.all(8.0),
-              shrinkWrap: true,
-              itemCount: surah.surahs.length,
-              itemBuilder: (context,index){
-                return Container(
-                    decoration:  BoxDecoration(
-                      color: UIColors.whitPrimary.withOpacity(.5),
-                    ),
-                    //margin: const EdgeInsets.only(top: 23),
-                    height: 42,
-                    child: surahs(context,index));
-              }
+        height: 80,
+        decoration: BoxDecoration(
+          color: UIColors.whitPrimary.withOpacity(.2),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Text(surah.number.toString(),style: UITextStyle.titleBold,),
+              const SizedBox(width: 10,),
+              Text(surah.name,style: UITextStyle.titleBold),
+              const SizedBox(width: 90,),
+              Text(surah.numberOfAyahs.toString(),style: UITextStyle.titleBold),
+              const SizedBox(width: 20,),
+              Text(surah.revelationType,style: UITextStyle.titleBold),
+            ],
           ),
         ));
   }
-
-  Widget surahs (BuildContext context,index) {
-    return Row(
-      children: [
-            Text(
-              surah.surahs[0]!.number.toString(),
-              style: UITextStyle.titleBold,
-            ),
-            Text(surah.surahs[0]!.name, style: UITextStyle.titleBold),
-            Text(surah.surahs[0]!.numberOfAyahs.toString(),
-                style: UITextStyle.titleBold),
-            Text(surah.surahs[0]!.revelationType,
-                style: UITextStyle.titleBold),
-      ],
-    );
-  }
 }
-

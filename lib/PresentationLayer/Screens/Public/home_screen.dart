@@ -52,14 +52,19 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child: Stack(
-                    children:  [
-                      const Image(image: AssetImage('assets/images/luxury-gold-removebg-preview.png',),
-                        width: 320,height: 190,),
-                      Positioned.fill(
-                          child: Align(alignment: Alignment.center,
-                              child: Text("التصنيفات",style: UITextStyle.titleBold.copyWith(fontSize: 22),)))
-                    ],
+                  child: InkWell(
+                    onTap: (){
+                      Get.toNamed(AppRoutes.classification);
+                    },
+                    child: Stack(
+                      children:  [
+                        const Image(image: AssetImage('assets/images/luxury-gold-removebg-preview.png',),
+                          width: 320,height: 190,),
+                        Positioned.fill(
+                            child: Align(alignment: Alignment.center,
+                                child: Text("التصنيفات",style: UITextStyle.titleBold.copyWith(fontSize: 22),)))
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(

@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quran/Constants/get_routes.dart';
-import 'package:quran/PresentationLayer/Widgets/appar.dart';
+import '../../../BusinessLayer/Controllers/surah_controller.dart';
+import '../../Widgets/appar.dart';
+import '../../Widgets/surah_item.dart';
 
-import '../../../BusinessLayer/Controllers/surahs_controller.dart';
-import '../../Widgets/surahs_item.dart';
 
-class SurahsScreen extends StatelessWidget {
-  SurahsScreen({Key? key}) : super(key: key);
-  final SurahsController surahsController = Get.put(SurahsController());
+class SurahScreen extends StatelessWidget {
+   SurahScreen({Key? key}) : super(key: key);
+final SurahController surahController =
+          Get.put(SurahController(Get.arguments[0]));
+
   @override
   Widget build(BuildContext context) {
+
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -20,20 +22,15 @@ class SurahsScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: GetBuilder(
-                  init: surahsController,
+                  init: surahController,
                   builder: (context) {
                     return SizedBox(
                       height: Get.height-100 ,
                       child: ListView.builder(
-                        itemCount: surahsController.surahs.length,
+                        itemCount: surahController.ayahs.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return InkWell(
-                            onTap: (){
-                              Get.toNamed(AppRoutes.surah,arguments: [surahsController.surahs[index]]);
-                            },
-                            child: SurahsItem(
-                              surah: surahsController.surahs[index],
-                            ),
+                          return SurahItem(
+                            ayah: surahController.ayahs[index],
                           );
                         },
                       ),
