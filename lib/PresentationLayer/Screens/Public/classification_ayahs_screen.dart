@@ -1,37 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../BusinessLayer/Controllers/surah_controller.dart';
+
+import '../../../BusinessLayer/Controllers/classification_ayahs_controller.dart';
 import '../../../Constants/text_styles.dart';
-import '../../../DataAccessLayer/Models/surah.dart';
 import '../../Widgets/appar.dart';
-import '../../Widgets/surah_item.dart';
+import '../../Widgets/classification_ayahs_item.dart';
 
 
-class SurahScreen extends StatelessWidget {
-   SurahScreen({Key? key}) : super(key: key);
-final SurahController surahController =
-          Get.put(SurahController(Get.arguments[0]));
+
+class ClassificationAyahs extends StatelessWidget {
+   ClassificationAyahs({Key? key}) : super(key: key);
+final ClassificationAyahsController controller = Get.put(ClassificationAyahsController(Get.arguments[0]));
   @override
   Widget build(BuildContext context) {
-
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-          appBar: mainAppBar(title: Text(surahController.surah!.name,style: UITextStyle.titleBold.copyWith(fontSize: 22),)),
+          appBar: mainAppBar(title: Text("التصنيفات",style: UITextStyle.titleBold.copyWith(fontSize: 22),)),
           body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: GetBuilder(
-                  init: surahController,
+                  init: controller,
                   builder: (context) {
                     return SizedBox(
                       height: Get.height-100 ,
                       child: ListView.builder(
-                        itemCount: surahController.ayahs.length,
+                        itemCount: controller.classificationAyahs.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return SurahItem(
-                            ayah: surahController.ayahs[index],
+                          return ClassificationAyahsItem(
+                            classificationAyah: controller.classificationAyahs[index],
                           );
                         },
                       ),

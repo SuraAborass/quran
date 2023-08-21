@@ -9,7 +9,6 @@ class SurahController extends GetxController{
   List<Ayah> ayahs = [];
  final  Surah surah;
   SurahController(this.surah);
-
   var loading = false.obs;
 
   @override

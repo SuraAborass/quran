@@ -20,7 +20,7 @@ final Classification classification;
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(classification.name,style: UITextStyle.titleBold.copyWith(fontSize: 16),overflow: TextOverflow.ellipsis),
+          Expanded(child: Text(classification.name,style: UITextStyle.titleBold.copyWith(fontSize: 20),overflow: TextOverflow.ellipsis)),
         ],
       ),
     );

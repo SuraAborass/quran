@@ -1,11 +1,13 @@
 import 'package:get/get.dart';
 import 'package:quran/DataAccessLayer/Models/classification.dart';
 
+import '../../DataAccessLayer/Models/classification_ayah.dart';
 import '../../DataAccessLayer/Repositories/classification_repo.dart';
 
 class ClassificationController extends GetxController{
   ClassificationRepo repo = ClassificationRepo();
   List<Classification> classifications = [];
+
 
   var loading = false.obs;
 
@@ -21,4 +23,5 @@ class ClassificationController extends GetxController{
     update();
     loading.value = false;
   }
+
 }

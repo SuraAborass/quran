@@ -7,15 +7,15 @@ import '../../../BusinessLayer/Controllers/surahs_controller.dart';
 import '../../../Constants/text_styles.dart';
 import '../../Widgets/surahs_item.dart';
 
-class SurahsScreen extends StatelessWidget {
-  SurahsScreen({Key? key}) : super(key: key);
+class SurahsForStoriesScreen extends StatelessWidget {
+  SurahsForStoriesScreen({Key? key}) : super(key: key);
   final SurahsController surahsController = Get.put(SurahsController());
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-          appBar: mainAppBar(title: Text("السور",style: UITextStyle.titleBold.copyWith(fontSize: 22))),
+          appBar: mainAppBar(title: Text("السور المذكورة قصصها",style: UITextStyle.titleBold.copyWith(fontSize: 22))),
           body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Padding(
@@ -30,7 +30,7 @@ class SurahsScreen extends StatelessWidget {
                         itemBuilder: (BuildContext context, int index) {
                           return InkWell(
                             onTap: (){
-                              Get.toNamed(AppRoutes.surah,arguments: [surahsController.surahs[index]]);
+                              Get.toNamed(AppRoutes.stories,arguments: [surahsController.surahs[index]] );
                             },
                             child: SurahsItem(
                               surah: surahsController.surahs[index],

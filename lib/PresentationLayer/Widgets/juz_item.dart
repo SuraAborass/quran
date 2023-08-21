@@ -3,10 +3,9 @@ import 'package:get/get.dart';
 import '../../Constants/colors.dart';
 import '../../DataAccessLayer/Models/ayah.dart';
 
-class SurahItem extends StatelessWidget {
-  const SurahItem({Key? key,required this.ayah}) : super(key: key);
+class JuzItem extends StatelessWidget {
+  const JuzItem({Key? key,required this.ayah}) : super(key: key);
 final Ayah ayah;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +15,7 @@ final Ayah ayah;
       decoration: BoxDecoration(
         color: UIColors.whitPrimary.withOpacity(.2),
       ),
-      child: Text(ayah.text,style: const TextStyle(fontSize: 16),),
+      child: Text(ayah.text+ " "+ayah.number.toString(),style: const TextStyle(fontSize: 16),),
     );
   }
 }

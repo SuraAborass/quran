@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         backgroundColor: UIColors.primary,
-        appBar: mainAppBar(context),
+        appBar: mainAppBar(title: Text("القرآن الكريم",style: UITextStyle.titleBold.copyWith(fontSize: 22),)),
         body: Center(
           child: SizedBox(
             height: 600,
@@ -41,14 +41,19 @@ class HomeScreen extends StatelessWidget {
                 ),
                 //const SizedBox(height: 15,),
                 Expanded(
-                  child: Stack(
-                    children:  [
-                      const Image(image: AssetImage('assets/images/luxury-gold-removebg-preview.png',),
-                        width: 320,height: 190,),
-                      Positioned.fill(
-                          child: Align(alignment: Alignment.center,
-                              child: Text("الأجزاء",style: UITextStyle.titleBold.copyWith(fontSize: 22),)))
-                    ],
+                  child: InkWell(
+                    onTap: (){
+                      Get.toNamed(AppRoutes.ajzaa);
+                    },
+                    child: Stack(
+                      children:  [
+                        const Image(image: AssetImage('assets/images/luxury-gold-removebg-preview.png',),
+                          width: 320,height: 190,),
+                        Positioned.fill(
+                            child: Align(alignment: Alignment.center,
+                                child: Text("الأجزاء",style: UITextStyle.titleBold.copyWith(fontSize: 22),)))
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
@@ -68,14 +73,19 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child: Stack(
-                    children:  [
-                      const Image(image: AssetImage('assets/images/luxury-gold-removebg-preview.png',),
-                        width: 320,height: 190,),
-                      Positioned.fill(
-                          child: Align(alignment: Alignment.center,
-                              child: Text("قصص مختارة",style: UITextStyle.titleBold.copyWith(fontSize: 20),)))
-                    ],
+                  child: InkWell(
+                    onTap: (){
+                      Get.toNamed(AppRoutes.surahsForStories);
+                    },
+                    child: Stack(
+                      children:  [
+                        const Image(image: AssetImage('assets/images/luxury-gold-removebg-preview.png',),
+                          width: 320,height: 190,),
+                        Positioned.fill(
+                            child: Align(alignment: Alignment.center,
+                                child: Text("قصص مختارة",style: UITextStyle.titleBold.copyWith(fontSize: 20),)))
+                      ],
+                    ),
                   ),
                 ),
 

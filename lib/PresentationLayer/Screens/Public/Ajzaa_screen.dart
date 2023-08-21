@@ -1,39 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quran/Constants/get_routes.dart';
-import 'package:quran/PresentationLayer/Widgets/appar.dart';
-
-import '../../../BusinessLayer/Controllers/surahs_controller.dart';
+import '../../../BusinessLayer/Controllers/Ajzaa_controller.dart';
 import '../../../Constants/text_styles.dart';
-import '../../Widgets/surahs_item.dart';
+import '../../Widgets/ajzaa_item.dart';
+import '../../Widgets/appar.dart';
 
-class SurahsScreen extends StatelessWidget {
-  SurahsScreen({Key? key}) : super(key: key);
-  final SurahsController surahsController = Get.put(SurahsController());
+class AjzaaScreen extends StatelessWidget {
+   AjzaaScreen({Key? key}) : super(key: key);
+final AjzaaController ajzaaController = Get.put(AjzaaController());
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-          appBar: mainAppBar(title: Text("السور",style: UITextStyle.titleBold.copyWith(fontSize: 22))),
+          appBar: mainAppBar(title: Text("الأجزاء",style: UITextStyle.titleBold.copyWith(fontSize: 22),)),
           body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: GetBuilder(
-                  init: surahsController,
+                  init: ajzaaController,
                   builder: (context) {
                     return SizedBox(
                       height: Get.height-100 ,
                       child: ListView.builder(
-                        itemCount: surahsController.surahs.length,
+                        itemCount: ajzaaController.juzs.length,
                         itemBuilder: (BuildContext context, int index) {
                           return InkWell(
                             onTap: (){
-                              Get.toNamed(AppRoutes.surah,arguments: [surahsController.surahs[index]]);
+                              Get.toNamed(AppRoutes.juz,arguments: [ajzaaController.juzs[index]]);
+
                             },
-                            child: SurahsItem(
-                              surah: surahsController.surahs[index],
+                            child: AjzaaItem(
+                              juz: ajzaaController.juzs[index],
                             ),
                           );
                         },
