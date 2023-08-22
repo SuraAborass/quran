@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../Constants/colors.dart';
+import 'package:get/get.dart';
+
+import '../../Constants/get_routes.dart';
 
 
 PreferredSizeWidget mainAppBar(
@@ -20,5 +23,13 @@ PreferredSizeWidget mainAppBar(
             color: UIColors.white,
           ));
     }),
+    actions: [
+      IconButton(
+          icon: Icon(Icons.search),
+          color: UIColors.lightWhite,
+          onPressed: () {
+            Get.toNamed(AppRoutes.searchScreen,arguments: [0]);
+          }),
+    ],
   );
 }

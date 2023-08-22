@@ -26,7 +26,7 @@ final AjzaaController ajzaaController = Get.put(AjzaaController());
                     return SizedBox(
                       height: Get.height-100 ,
                       child: ListView.builder(
-                        itemCount: ajzaaController.juzs.length,
+                        itemCount: 30,
                         itemBuilder: (BuildContext context, int index) {
                           return InkWell(
                             onTap: (){

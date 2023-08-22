@@ -3,6 +3,7 @@ import '../PresentationLayer/Screens/Public/Ajzaa_screen.dart';
 import '../PresentationLayer/Screens/Public/classification_ayahs_screen.dart';
 import '../PresentationLayer/Screens/Public/home_screen.dart';
 import '../PresentationLayer/Screens/Public/juz_screen.dart';
+import '../PresentationLayer/Screens/Public/search_screen.dart';
 import '../PresentationLayer/Screens/Public/splash_screen.dart';
 import '../PresentationLayer/Screens/Public/stories_screen.dart';
 import '../PresentationLayer/Screens/Public/surah_screen.dart';
@@ -45,5 +46,8 @@ List<GetPage<dynamic>> getPages = [
   GetPage(
     name: AppRoutes.juz,
     page: () =>  JuzScreen(),),
+  GetPage(
+    name: AppRoutes.searchScreen,
+    page: () =>  SearchScreen(),),
 
 ];

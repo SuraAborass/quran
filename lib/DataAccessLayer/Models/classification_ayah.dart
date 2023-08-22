@@ -1,10 +1,9 @@
-
-import 'ayah.dart';
+import 'ayat.dart';
 
 class ClassificationAyah {
 
   final String sura;
-  final Ayah ayah;
+  final Ayaht ayah;
 
   ClassificationAyah({
     required this.sura,
@@ -15,7 +14,7 @@ class ClassificationAyah {
   factory ClassificationAyah.fromMap(Map<String, dynamic> map) {
     return ClassificationAyah(
       sura: map['sura'],
-      ayah: Ayah.fromMap(map['ayah'])
+      ayah: Ayaht.fromMap(map['ayah'])
     );
   }
 }

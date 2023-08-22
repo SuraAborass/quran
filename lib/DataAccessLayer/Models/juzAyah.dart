@@ -1,26 +1,26 @@
 
-import 'package:quran/DataAccessLayer/Models/surah.dart';
-
-class Ayah {
+class JuzAyah {
   final String text;
   final int numberInSurah;
+  //final int id;
   final int number;
-  final int juz;
-  Surah? surah;
+  final String name;
 
-  Ayah({
+  JuzAyah({
     required this.text,
     required this.numberInSurah,
+    //required this.id,
     required this.number,
-    required this.juz,
+    required this.name,
   });
 
-  factory Ayah.fromMap(Map<String, dynamic> map) {
-    return Ayah(
+  factory JuzAyah.fromMap(Map<String, dynamic> map) {
+    return JuzAyah(
       text: map['text'] ?? '',
       numberInSurah:  map['numberInSurah'] ?? 0,
+      //id: map['id'] as int ?? 0,
       number: map['number'] as int ?? 0,
-      juz: map['juz'] ?? 0,
+      name: map['text_a'] ?? '',
 
     );
   }

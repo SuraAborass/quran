@@ -8,9 +8,9 @@ class JuzRepo {
   Future<List<Ayah>> getJuz(number) async {
     List<Ayah> ayahs= [];
     var response = await client.getJuz(number);
-    print(jsonDecode(response)['data']['ayahs'] );
+    print(jsonDecode(response)['ayahs'] );
     if (response != "") {
-      for(var element in jsonDecode(response)['data']['ayahs']){
+      for(var element in jsonDecode(response)['ayahs']){
         ayahs.add(Ayah.fromMap(element));
       }
       return ayahs;
